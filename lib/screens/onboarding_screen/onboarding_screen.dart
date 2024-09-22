@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screens/home_screen/home_screen.dart';
 import 'package:doctor_appointment_app/utils/constant/app_constant.dart';
 import 'package:doctor_appointment_app/utils/constant/image_constant.dart';
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
@@ -48,7 +49,9 @@ class OnboardingScreen extends StatelessWidget {
       ), 
       mediumSpaceh,
       Spacer(),
-      customButtonWidget(text: "Get Started", onPressed: (){}, fontColor: Colors.white , buttonColor: primaryColor , buttonHeight: 50 ,  fontWeight: FontWeight.w600)
+      customButtonWidget(text: "Get Started", onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+      }, fontColor: Colors.white , buttonColor: primaryColor , buttonHeight: 50 ,  fontWeight: FontWeight.w600)
     ],
     )
             )
