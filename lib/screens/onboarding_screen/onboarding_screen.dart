@@ -20,7 +20,7 @@ class OnboardingScreen extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               color: primaryColor,
-              image: DecorationImage(
+              image: const DecorationImage(
                   image: AssetImage(ImageConstant.onBoardingTexture),
                   fit: BoxFit.cover
               )
@@ -34,7 +34,7 @@ class OnboardingScreen extends StatelessWidget {
           Container(
              height: MediaQuery.of(context).size.height*0.4,
              // width: double.infinity,
-       decoration: BoxDecoration(
+       decoration: const BoxDecoration(
           color: Colors.white,
 
           borderRadius: BorderRadius.only(
@@ -42,7 +42,7 @@ class OnboardingScreen extends StatelessWidget {
             topRight: Radius.circular(30),
           )
        ),
-            child: Padding(padding: EdgeInsets.all(20),
+            child: Padding(padding: const EdgeInsets.all(20),
             child:  Column(
     children: [
     Padding(
@@ -55,9 +55,9 @@ class OnboardingScreen extends StatelessWidget {
         child: customTextWidget(text: "Book an appointment with doctor. Chat with doctor via appointment letter and get consultationt." , fontSize: 14 , fontWeight: FontWeight.w200 , textAlign: TextAlign.center , lineHeight: 1.5),
       ), 
       mediumSpaceh,
-      Spacer(),
+      const Spacer(),
       customButtonWidget(text: "Get Started", onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
       }, fontColor: Colors.white , buttonColor: primaryColor , buttonHeight: 50 ,  fontWeight: FontWeight.w600)
     ],
     )

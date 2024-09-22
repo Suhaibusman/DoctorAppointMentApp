@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                       height: 30,// Add horizontal padding for spacing
                     decoration: BoxDecoration(
-                    color: selectedIndex == index ? primaryColor : Color(0xffEDEDFC).withOpacity(0.4),
+                    color: selectedIndex == index ? primaryColor : const Color(0xffEDEDFC).withOpacity(0.4),
                     borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(
@@ -176,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     image: AssetImage(doctorList[index].doctorImage),
                                     fit: BoxFit.cover,
                                   ),
-                                  borderRadius: BorderRadius.only(topRight: Radius.circular(10) , topLeft: Radius.circular(10))                              ),
+                                  borderRadius: const BorderRadius.only(topRight: Radius.circular(10) , topLeft: Radius.circular(10))                              ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 10, right: 10 , top: 10),
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     Wrap(
                                       children: [
-                                        Icon(
+                                        const Icon(
                                           Icons.star_purple500_outlined,
                                           color: Color(0xffFFD33C),
                                           size: 16,
@@ -246,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.separated(
                 separatorBuilder: (context, index) => smallSpaceh,
                 shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(right: 10),
@@ -295,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: Colors.black,
                                           ),
 
-                                        Icon(Icons.more_horiz)
+                                        const Icon(Icons.more_horiz)
                                         ],
                                       ),
                                     ),
@@ -313,7 +313,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       padding: const EdgeInsets.only(left: 10),
                                       child: Row(
                                         children: [
-                                          Icon(
+                                          const Icon(
                                             Icons.star_purple500_outlined,
                                             color: Color(0xffFFD33C),
                                             size: 16,

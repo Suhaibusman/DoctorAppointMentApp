@@ -8,5 +8,12 @@ abstract class ImageConstant {
   static const textField = 'assets/textfield.png';
   static const homeTexture = 'assets/homeTexture.png';
   static const onBoardingTexture = 'assets/onBoardingTexture.png';
+  static const experienceIcon = 'assets/icons/experience.png';
+  static const patientIcon = 'assets/icons/patientIcon.png';
+  static const ratingIcon = 'assets/icons/rating.png';
+  static const reviewsIcon = 'assets/icons/reviews.png';
+  static const callButton = 'assets/callButton.png';
+  static const callScreenButton = 'assets/callScreenButton.png';
+  static const callTimeButton = 'assets/callTime.png';
 
 }
