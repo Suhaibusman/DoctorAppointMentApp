@@ -56,7 +56,7 @@ List<DoctorModel> doctorList = [
   DoctorModel(
     doctorName: "Dr. Michael Brown",
     speciality: "Gastroenterologist",
-    clinicName: "Digestive Health Clinic",
+    clinicName: "Digestive Clinic",
     totalReviews: 320,
     about: "Dr. Michael Brown specializes in digestive disorders and is highly recommended.",
     rating: 4.9,

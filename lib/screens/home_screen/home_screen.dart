@@ -243,84 +243,109 @@ class _HomeScreenState extends State<HomeScreen> {
             // mediumSpaceh,
             Padding(
               padding: const EdgeInsets.only(left: 10 , right: 10),
-              child: Expanded(
-                child:ListView.separated(
-                  separatorBuilder: (context, index) => smallSpaceh,
-                  shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailsScreen(doctorModel: doctorList[index]),));
-                        },
-                        child: Container(
-                          // padding: const EdgeInsets.symmetric(horizontal: 10),
-                            height: MediaQuery.of(context).size.height *0.15,
-                            width: MediaQuery.of(context).size.width *0.5,// Add horizontal padding for spacing
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
+              child: ListView.separated(
+                separatorBuilder: (context, index) => smallSpaceh,
+                shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailsScreen(doctorModel: doctorList[index]),));
+                      },
+                      child: Container(
+                        // padding: const EdgeInsets.symmetric(horizontal: 10),
+                          height: MediaQuery.of(context).size.height *0.15,
+                          width: MediaQuery.of(context).size.width *0.5,// Add horizontal padding for spacing
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  height: MediaQuery.of(context).size.height *0.12,
+                                  width: MediaQuery.of(context).size.height *0.12,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(doctorList[index].doctorImage),
+                                        fit: BoxFit.cover,
+                                      ),),
+                                ),
+                                // smallSpacew,
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10, right: 10 , top: 10),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          customTextWidget(
+                                            text: doctorList[index].doctorName,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black,
+                                          ),
+
+                                        Icon(Icons.more_horiz)
+                                        ],
+                                      ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: customTextWidget(
+                                        text: "${doctorList[index].speciality} | ${doctorList[index].clinicName}",
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: lighterColor,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.star_purple500_outlined,
+                                            color: Color(0xffFFD33C),
+                                            size: 16,
+                                          ),
+                                          customTextWidget(
+                                            text: doctorList[index].rating.toString(),
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.black,
+                                          ),
+                                          customTextWidget(
+                                            text: "(${doctorList[index].totalReviews.toString()} reviews)",
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            color: lighterColor,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    smallSpaceh,
+                                  ],
+                                )
+                              ],
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    height: MediaQuery.of(context).size.height *0.12,
-                                    width: MediaQuery.of(context).size.height *0.15,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage(doctorList[index].doctorImage),
-                                          fit: BoxFit.cover,
-                                        ),),
-                                  ),
-                                  smallSpacew,
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10, right: 10 , top: 10),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            customTextWidget(
-                                              text: doctorList[index].doctorName,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.black,
-                                            ),
-
-                                          Icon(Icons.more_horiz)
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 10),
-                                        child: customTextWidget(
-                                          text: doctorList[index].speciality,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            )
-                        ),
+                          )
                       ),
+                    ),
 
-                    );
-                  },
-                  itemCount: doctorList.length,
-                  scrollDirection: Axis.vertical,
-                ),
+                  );
+                },
+                itemCount: doctorList.length,
+                scrollDirection: Axis.vertical,
               ),
             ),
           ],
