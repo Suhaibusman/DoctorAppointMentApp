@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  customTextWidget(text: "Favorite Doctors", fontSize: 16, fontWeight: FontWeight.w500),
+                  customTextWidget(text: "Favorite Doctor", fontSize: 16, fontWeight: FontWeight.w500),
                   customTextWidget(text: "See all", fontSize: 12, fontWeight: FontWeight.w400 ,color: primaryColor),
                 ],
               ),
@@ -226,6 +226,100 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   itemCount: favoriteDoctors.length,
                   scrollDirection: Axis.horizontal,
+                ),
+              ),
+            ),
+            mediumSpaceh,
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  customTextWidget(text: "Top Doctor", fontSize: 16, fontWeight: FontWeight.w500),
+                  customTextWidget(text: "See all", fontSize: 12, fontWeight: FontWeight.w400 ,color: primaryColor),
+                ],
+              ),
+            ),
+            // mediumSpaceh,
+            Padding(
+              padding: const EdgeInsets.only(left: 10 , right: 10),
+              child: Expanded(
+                child:ListView.separated(
+                  separatorBuilder: (context, index) => smallSpaceh,
+                  shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailsScreen(doctorModel: doctorList[index]),));
+                        },
+                        child: Container(
+                          // padding: const EdgeInsets.symmetric(horizontal: 10),
+                            height: MediaQuery.of(context).size.height *0.15,
+                            width: MediaQuery.of(context).size.width *0.5,// Add horizontal padding for spacing
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    height: MediaQuery.of(context).size.height *0.12,
+                                    width: MediaQuery.of(context).size.height *0.15,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(doctorList[index].doctorImage),
+                                          fit: BoxFit.cover,
+                                        ),),
+                                  ),
+                                  smallSpacew,
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10, right: 10 , top: 10),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            customTextWidget(
+                                              text: doctorList[index].doctorName,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black,
+                                            ),
+
+                                          Icon(Icons.more_horiz)
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 10),
+                                        child: customTextWidget(
+                                          text: doctorList[index].speciality,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
+                        ),
+                      ),
+
+                    );
+                  },
+                  itemCount: doctorList.length,
+                  scrollDirection: Axis.vertical,
                 ),
               ),
             ),
