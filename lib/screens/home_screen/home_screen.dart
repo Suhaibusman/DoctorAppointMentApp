@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -351,6 +352,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: Container(
+        height: 70,
+        decoration: BoxDecoration(
+         image: DecorationImage(
+           image: AssetImage(ImageConstant.bottomNavbar),
+           fit: BoxFit.cover
+         )
+
+      ),)
     );
   }
 
