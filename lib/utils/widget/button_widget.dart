@@ -1,4 +1,3 @@
-import 'package:doctor_appointment_app/utils/constant/image_constant.dart';
 import 'package:doctor_appointment_app/utils/widget/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -6,8 +5,9 @@ Widget customButtonWidget({
   required String text,
   required Function() onPressed,
   required Color fontColor,
+  Color buttonColor =  Colors.blue,
   double buttonHeight = 43,
-  double buttonWidth = 129,
+  double buttonWidth = double.infinity,
   FontWeight fontWeight = FontWeight.normal,
 }) {
   return InkWell(
@@ -15,11 +15,9 @@ Widget customButtonWidget({
     child: Container(
         height: buttonHeight,
         width: buttonWidth,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(ImageConstant.bottomSheetButton),
-            fit: BoxFit.contain,
-          ),
+        decoration:  BoxDecoration(
+          color: buttonColor,
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Center(
             child: customTextWidget(

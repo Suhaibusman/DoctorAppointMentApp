@@ -10,17 +10,17 @@ Widget customTextWidget(
     TextAlign textAlign = TextAlign.start,
     FontWeight fontWeight = FontWeight.normal,
     Color color = Colors.black,
-    double? lineheight}) {
+    double? lineHeight}) {
   return AutoSizeText(
     text,
     overflow: overflow,
     textAlign: textAlign,
     maxLines: maxLines ?? 10,
     presetFontSizes: [fontSize, fontSize - 2, fontSize - 3, fontSize - 4],
-    style: GoogleFonts.poppins(
+    style: GoogleFonts.inter(
         fontSize: fontSize,
         fontWeight: fontWeight,
-        height: lineheight ?? 1.4,
+        height: lineHeight ?? 1.4,
         color: color),
   );
 }
