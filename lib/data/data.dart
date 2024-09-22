@@ -70,7 +70,7 @@ List<DoctorModel> doctorList = [
   DoctorModel(
     doctorName: "Dr. Sarah Johnson",
     speciality: "Dentist",
-    clinicName: "Smile Bright Dental",
+    clinicName: "Smile Dental",
     totalReviews: 400,
     about: "Dr. Sarah Johnson is a renowned dentist with expertise in cosmetic dentistry.",
     rating: 4.6,
@@ -83,7 +83,7 @@ List<DoctorModel> doctorList = [
   DoctorModel(
     doctorName: "Dr. Esther",
     speciality: "Dentist",
-    clinicName: "Smile Bright Dental",
+    clinicName: "Smile Dental",
     totalReviews: 280,
     about: "Dr. Esther is a renowned dentist with expertise in cosmetic dentistry.",
     rating: 4.5,
@@ -97,7 +97,7 @@ List<DoctorModel> doctorList = [
   DoctorModel(
     doctorName: "Dr. Warren",
     speciality: "Physician",
-    clinicName: "Physician Care Center",
+    clinicName: "Physician Center",
     totalReviews: 280,
     about: "Dr. Warren specializes in Physician, providing excellent services.",
     rating: 4.8,

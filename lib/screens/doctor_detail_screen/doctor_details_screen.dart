@@ -90,26 +90,30 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
         
                           ],
                         ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.star_purple500_outlined,
-                              color: Color(0xffFFD33C),
-                              size: 16,
-                            ),
-                            customTextWidget(
-                              text: widget.doctorModel.rating.toString(),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                            customTextWidget(
-                              text: "(${widget.doctorModel.totalReviews.toString()} reviews)",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: lighterColor,
-                            )
-                          ],
+
+                        Padding(
+                          padding: const EdgeInsets.only(right: 30),
+                          child: Row(
+                            children: [
+                              const Icon(
+                                Icons.star_purple500_outlined,
+                                color: Color(0xffFFD33C),
+                                size: 16,
+                              ),
+                              customTextWidget(
+                                text: widget.doctorModel.rating.toString(),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black,
+                              ),
+                              customTextWidget(
+                                text: "(${widget.doctorModel.totalReviews.toString()} reviews)",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: lighterColor,
+                              )
+                            ],
+                          ),
                         )
                         // Wrap(
                         //   children: [
