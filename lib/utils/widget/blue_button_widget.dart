@@ -1,5 +1,5 @@
+import 'package:doctor_appointment_app/utils/widget/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:oneline_bike_shopping_app/utils/widget/text_widget.dart';
 
 Widget customBlueButtonWidget({
   required String text,
