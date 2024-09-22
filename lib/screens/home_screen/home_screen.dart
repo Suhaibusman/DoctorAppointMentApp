@@ -252,41 +252,47 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Padding(
                     padding: const EdgeInsets.only(right: 10),
                     child: InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailsScreen(doctorModel: doctorList[index]),));
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DoctorDetailsScreen(doctorModel: doctorList[index]),
+                          ),
+                        );
                       },
                       child: Container(
-                        // padding: const EdgeInsets.symmetric(horizontal: 10),
-                          height: MediaQuery.of(context).size.height *0.15,
-                          width: MediaQuery.of(context).size.width *0.5,// Add horizontal padding for spacing
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  height: MediaQuery.of(context).size.height *0.12,
-                                  width: MediaQuery.of(context).size.height *0.12,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(doctorList[index].doctorImage),
-                                        fit: BoxFit.cover,
-                                      ),),
+                        height: MediaQuery.of(context).size.height * 0.15,
+                        width: MediaQuery.of(context).size.width * 0.5, // Add horizontal padding for spacing
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height * 0.12,
+                                width: MediaQuery.of(context).size.height * 0.12,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(doctorList[index].doctorImage),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                                // smallSpacew,
-                                Column(
+                              ),
+                              // Add a horizontal space if necessary
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 10, right: 10 , top: 10),
+                                      padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Aligns the text and icon
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           customTextWidget(
@@ -295,12 +301,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                             fontWeight: FontWeight.w600,
                                             color: Colors.black,
                                           ),
+                                          Container(
+                                            height: 24,
+                                            width: 24,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(ImageConstant.moreIcon),
+                                                fit: BoxFit.cover,
+                                              ),
 
-                                        const Icon(Icons.more_horiz)
+                                            ),
+                                          ), // Positioned to the right
                                         ],
                                       ),
                                     ),
-
                                     Padding(
                                       padding: const EdgeInsets.only(left: 10),
                                       child: customTextWidget(
@@ -330,20 +344,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                             fontSize: 12,
                                             fontWeight: FontWeight.w400,
                                             color: lighterColor,
-                                          )
+                                          ),
                                         ],
                                       ),
                                     ),
                                     smallSpaceh,
                                   ],
-                                )
-                              ],
-                            ),
-                          )
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-
-                  );
+                  )
+                  ;
                 },
                 itemCount: doctorList.length,
                 scrollDirection: Axis.vertical,
