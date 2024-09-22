@@ -367,15 +367,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 70,
-        decoration: BoxDecoration(
-         image: DecorationImage(
-           image: AssetImage(ImageConstant.bottomNavbar),
-           fit: BoxFit.cover
-         )
-
-      ),)
+      // bottomNavigationBar: Container(
+      //   height: 70,
+      //   decoration: BoxDecoration(
+      //    image: DecorationImage(
+      //      image: AssetImage(ImageConstant.bottomNavbar),
+      //      fit: BoxFit.cover
+      //    )
+      //
+      // ),)
     );
   }
 
