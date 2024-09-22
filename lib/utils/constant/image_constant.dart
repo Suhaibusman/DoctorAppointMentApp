@@ -17,5 +17,6 @@ abstract class ImageConstant {
   static const callTimeButton = 'assets/callTime.png';
   static const bottomNavbar = 'assets/bottomNavbar.png';
   static const moreIcon = 'assets/icons/more.png';
+  static const personIcon = 'assets/icons/more.png';
 
 }

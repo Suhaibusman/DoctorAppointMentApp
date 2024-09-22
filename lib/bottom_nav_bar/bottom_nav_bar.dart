@@ -1,5 +1,7 @@
 import 'package:doctor_appointment_app/screens/home_screen/home_screen.dart';
+import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -37,9 +39,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildNavBarItem(Icons.home, 0),
-                  _buildNavBarItem(Icons.calendar, 1),
-                  _buildNavBarItem(Icons.chat, 2),
+                  _buildNavBarItem(FontAwesomeIcons.home, 0),
+                  _buildNavBarItem(FontAwesomeIcons.calendar, 1),
+                  _buildNavBarItem(FontAwesomeIcons.message, 2),
                   // _buildCenterNavBarItem(Icons.shopping_cart),
                   _buildNavBarItem(Icons.person, 3),
                   // _buildNavBarItem(Icons.receipt, 4),
@@ -61,10 +63,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
       },
       child: Icon(
         icon,
-        size: 30,
+        size: 24,
         color: _selectedIndex == index
             ? Colors.blue
-            : Colors.grey, // Highlight selected icon
+            : lighterColor, // Highlight selected icon
       ),
     );
   }
