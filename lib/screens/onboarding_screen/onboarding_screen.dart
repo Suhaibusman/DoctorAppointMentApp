@@ -1,4 +1,4 @@
-import 'package:doctor_appointment_app/bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:doctor_appointment_app/screens/auth_screens/login_screen/login_screen.dart';
 import 'package:doctor_appointment_app/utils/constant/app_constant.dart';
 import 'package:doctor_appointment_app/utils/constant/image_constant.dart';
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
@@ -57,7 +57,7 @@ class OnboardingScreen extends StatelessWidget {
       mediumSpaceh,
       const Spacer(),
       customButtonWidget(text: "Get Started", onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) =>  BottomNavBar(),));
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>  LoginScreen(),));
       }, fontColor: Colors.white , buttonColor: primaryColor , buttonHeight: 50 ,  fontWeight: FontWeight.w600)
     ],
     )

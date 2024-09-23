@@ -1,7 +1,8 @@
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
-import 'package:doctor_appointment_app/utils/widget/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../../utils/widget/text_widget.dart';
 
 class ClientAppointmentCalendar extends StatefulWidget {
   @override
@@ -18,14 +19,24 @@ class _ClientAppointmentCalendarState extends State<ClientAppointmentCalendar> {
     DateTime(2024, 9, 24): ["9:00 AM", "11:00 AM", "3:00 PM"],
     DateTime(2024, 9, 25): ["10:00 AM", "1:00 PM", "5:00 PM"],
     DateTime(2024, 9, 26): ["8:00 AM", "12:00 PM", "4:00 PM"],
+    DateTime(2024, 9, 27): ["9:00 AM", "11:00 AM", "3:00 PM"],
+    DateTime(2024, 9, 28): ["10:00 AM", "1:00 PM", "5:00 PM"],
+    DateTime(2024, 9, 29): ["8:00 AM", "12:00 PM", "4:00 PM"],
+    DateTime(2024, 9, 30): ["8:00 AM", "12:00 PM", "4:00 PM"],
+
   };
+
+  // Function to remove time component from DateTime
+  DateTime _stripTime(DateTime date) {
+    return DateTime(date.year, date.month, date.day);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: customTextWidget(text: "Book an Appointment" , fontSize: 20 , fontWeight: FontWeight.w600 , color: Colors.white),
+        title: customTextWidget(text: "Book an Appointment", fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
         backgroundColor: primaryColor,
         automaticallyImplyLeading: false,
       ),
@@ -70,11 +81,11 @@ class _ClientAppointmentCalendarState extends State<ClientAppointmentCalendar> {
 
           // Display available slots for the selected day
           Expanded(
-            child: _selectedDay != null && availableSlots.containsKey(_selectedDay)
+            child: _selectedDay != null && availableSlots.containsKey(_stripTime(_selectedDay!))
                 ? ListView.builder(
-              itemCount: availableSlots[_selectedDay]!.length,
+              itemCount: availableSlots[_stripTime(_selectedDay!)]!.length,
               itemBuilder: (context, index) {
-                String timeSlot = availableSlots[_selectedDay]![index];
+                String timeSlot = availableSlots[_stripTime(_selectedDay!)]![index];
                 return ListTile(
                   leading: Icon(Icons.schedule, color: Colors.blueAccent),
                   title: Text(timeSlot),

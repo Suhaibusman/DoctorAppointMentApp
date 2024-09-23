@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:doctor_appointment_app/utils/constant/image_constant.dart';
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
 import 'package:doctor_appointment_app/utils/widget/button_widget.dart';
@@ -95,7 +96,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             // Edit Profile Button
             Padding(
               padding: const EdgeInsets.all(20),
-              child: customButtonWidget(text: "Logout", onPressed: (){}, fontColor: Colors.white , buttonColor: primaryColor , buttonHeight: 50 ,  fontWeight: FontWeight.w600),
+              child: customButtonWidget(text: "Logout", onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => OnboardingScreen(),));
+              }, fontColor: Colors.white , buttonColor: primaryColor , buttonHeight: 50 ,  fontWeight: FontWeight.w600),
             ),
 
           ],
