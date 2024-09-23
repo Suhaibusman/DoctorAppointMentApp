@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
+import 'package:doctor_appointment_app/utils/widget/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -64,20 +65,20 @@ class _ClientAppointmentCalendarState extends State<ClientAppointmentCalendar> {
             },
             availableGestures: AvailableGestures.all,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
 
           // Appointment Slots section
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              _selectedDay != null
-                  ? 'Available Slots on ${_selectedDay!.toLocal()}'
+            child: customTextWidget(
+             text:  _selectedDay != null
+                  ? 'Available Slots on ${_selectedDay!.day}/${_selectedDay!.month}/${_selectedDay!.year}'
                   : 'Select a Date to see available slots',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              fontSize: 16, fontWeight: FontWeight.bold, color: primaryColor,
             ),
           ),
 
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
 
           // Display available slots for the selected day
           Expanded(
@@ -88,15 +89,20 @@ class _ClientAppointmentCalendarState extends State<ClientAppointmentCalendar> {
                 String timeSlot = availableSlots[_stripTime(_selectedDay!)]![index];
                 return ListTile(
                   leading: Icon(Icons.schedule, color: primaryColor),
-                  title: Text(timeSlot),
-                  trailing: ElevatedButton(
+                  title: customTextWidget( text: timeSlot , fontWeight: FontWeight.bold),
+                  trailing: customButtonWidget(
                     onPressed: () {
                       // Handle booking appointment here
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Appointment booked for $timeSlot')),
+                        SnackBar(content: customTextWidget( text: 'Appointment booked for $timeSlot' , color: Colors.white)),
                       );
                     },
-                    child: Text('Book'),
+                    text: 'Book',
+                    fontColor: Colors.white,
+                    buttonColor: primaryColor,
+                    buttonHeight: 30,
+                    fontWeight: FontWeight.w600,
+                    buttonWidth: 70
                   ),
                 );
               },
@@ -106,7 +112,7 @@ class _ClientAppointmentCalendarState extends State<ClientAppointmentCalendar> {
                 _selectedDay != null
                     ? 'No available slots on this day.'
                     : 'Select a date to view slots.',
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+                style: const TextStyle(fontSize: 16, color: Colors.grey),
               ),
             ),
           ),
