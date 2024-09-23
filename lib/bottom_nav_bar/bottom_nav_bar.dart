@@ -1,4 +1,7 @@
+import 'package:doctor_appointment_app/screens/calendar_screen/calendar_screen.dart';
+import 'package:doctor_appointment_app/screens/chat_screen/chat_screen.dart';
 import 'package:doctor_appointment_app/screens/home_screen/home_screen.dart';
+import 'package:doctor_appointment_app/screens/profile/profile_screen.dart';
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,9 +16,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _pages = [
     const HomeScreen(),
-    const Center(child: Text('Calendar Page')),
-    const Center(child: Text('Chat Page')),
-    const Center(child: Text('Profile Page')),
+    ClientAppointmentCalendar(),
+     ChatScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -65,7 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         icon,
         size: 24,
         color: _selectedIndex == index
-            ? Colors.blue
+            ? primaryColor
             : lighterColor, // Highlight selected icon
       ),
     );

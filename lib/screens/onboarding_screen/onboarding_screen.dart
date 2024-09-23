@@ -1,5 +1,4 @@
 import 'package:doctor_appointment_app/bottom_nav_bar/bottom_nav_bar.dart';
-import 'package:doctor_appointment_app/screens/home_screen/home_screen.dart';
 import 'package:doctor_appointment_app/utils/constant/app_constant.dart';
 import 'package:doctor_appointment_app/utils/constant/image_constant.dart';
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
