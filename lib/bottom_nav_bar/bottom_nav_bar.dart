@@ -39,7 +39,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  _buildNavBarItem(FontAwesomeIcons.home, 0),
+                  _buildNavBarItem(FontAwesomeIcons.house, 0),
                   _buildNavBarItem(FontAwesomeIcons.calendar, 1),
                   _buildNavBarItem(FontAwesomeIcons.message, 2),
                   // _buildCenterNavBarItem(Icons.shopping_cart),
