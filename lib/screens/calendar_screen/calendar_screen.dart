@@ -87,7 +87,7 @@ class _ClientAppointmentCalendarState extends State<ClientAppointmentCalendar> {
               itemBuilder: (context, index) {
                 String timeSlot = availableSlots[_stripTime(_selectedDay!)]![index];
                 return ListTile(
-                  leading: Icon(Icons.schedule, color: Colors.blueAccent),
+                  leading: Icon(Icons.schedule, color: primaryColor),
                   title: Text(timeSlot),
                   trailing: ElevatedButton(
                     onPressed: () {
