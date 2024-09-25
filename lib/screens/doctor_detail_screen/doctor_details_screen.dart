@@ -23,7 +23,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            largeSpaceh,
+            mediumSpaceh,
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(

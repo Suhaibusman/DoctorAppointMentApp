@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class TransparentSearchField extends StatelessWidget {
-  final TextEditingController searchController = TextEditingController();
+  final TextEditingController controller;
   final ValueChanged<String> onSearch;
 
-  TransparentSearchField({required this.onSearch});
+  TransparentSearchField({required this.onSearch , required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: searchController,
+      controller: controller,
       onChanged: onSearch, // Trigger the search logic when text changes
       style: TextStyle(color: Colors.white), // Adjust the text color
       decoration: InputDecoration(
