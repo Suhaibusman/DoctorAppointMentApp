@@ -4,6 +4,7 @@ import 'package:doctor_appointment_app/utils/constant/app_constant.dart';
 import 'package:doctor_appointment_app/utils/constant/image_constant.dart';
 import 'package:doctor_appointment_app/utils/themes/color_themes.dart';
 import 'package:doctor_appointment_app/utils/widget/text_widget.dart';
+import 'package:doctor_appointment_app/utils/widget/transparent_text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -76,10 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    Image.asset(
-                      ImageConstant.textField,
-                      width: double.infinity,
-                    ),
+                    TransparentSearchField(onSearch: (value) {
+                      print(value);
+                    }),
+
                   ],
                 ),
               ),

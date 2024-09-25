@@ -6,17 +6,20 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool obscureText;
   final IconData icon;
+  final String? Function(dynamic value) validator;
 
   CustomTextField({
     required this.hintText,
     required this.controller,
     this.obscureText = false,
-    required this.icon,
+    required this.icon, required,
+  required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: validator,
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
